@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pronuncia Ingles Con Liza</title>
+    <link
+      href="/css/bootstrap-reboot.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link
+      href="/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+    .blueBackground {
+      background-color: #0048b4;
+    }
+    .blueBackgroundGradient {
+      background: rgb(2, 85, 201);
+      background: linear-gradient(
+        45deg,
+        rgba(2, 85, 201, 1) 0%,
+        rgba(0, 39, 104, 1) 100%
+      );
+      color: white;
+    }
+    .blueBackgroundGradientDark {
+      background: rgb(2, 85, 201);
+      background: linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 39, 104, 1) 100%
+      );
+      color: white;
+    }
+    .logo {
+      width: 100%;
+    }
+    .container-fluid > div {
+      max-width: 900px; /* Example, but you can replace by the value you need */
+      margin: 0 auto;
+    }
+    .container-fluid > div > div {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    button {
+      padding: 17px 30px;
+      border-radius: 30px;
+      border: 0;
+      color: black;
+      background-color: rgb(255, 255, 255);
+      letter-spacing: 1.5px;
+      font-size: 0.8em;
+      transition: all 0.3s ease;
+      box-shadow: rgb(200, 200, 200) 0px 10px 0px 0px;
+    }
+
+    button:hover {
+      box-shadow: rgb(220, 220, 220) 0px 7px 0px 0px;
+    }
+
+    button:active {
+      background-color: rgb(210, 210, 210);
+      /*50, 168, 80*/
+      box-shadow: rgb(180, 180, 180) 0px 0px 0px 0px;
+      transform: translateY(5px);
+      transition: 200ms;
+    }
+    /* .brain {
+      display: inherit;
+      bottom: 0;
+      left: 0;
+      padding-bottom: -100px;
+      clip: rect(0px, 50px, 100px, 0px);
+    } */
+
+    .img-wrapper {
+      max-height: 300px;
+      overflow: hidden;
+      display: block;
+      position: relative;
+      top: -200px;
+    }
+
+    .img-wrapper img {
+      width: 400px;
+      z-index: 0;
+    }
+
+    h3 {
+      font-weight: 700;
+    }
+    .whiteContainer {
+      padding-top: 5%;
+    }
+
+    .grayBox {
+      background-color: #ddd;
+      border-radius: 30px;
+      margin: 50px;
+    }
+
+    .grayBox > h1 {
+      font-weight: 700;
+    }
+
+    .blueBox {
+      background: rgb(2, 85, 201);
+      background: linear-gradient(128deg, #0255c9, #002769);
+      color: white;
+    }
+    /* .box-left-mini {
+      float: left;
+      background-size: 100px;
+      width: 1200px;
+      height: 600px;
+    } */
+    .behindAnchor {
+      position: relative;
+      z-index: 2;
+    }
+
+    .behind {
+      /* without position: relative/absoulte the z-index wo≤nt work!*/
+      position: absolute;
+      /* this moves the dives up or down*/
+      bottom: 0px;
+      /* this move the div left or right! */
+      left: 15px;
+      width: 30%;
+      /* height: 100px; */
+      /* background-color: blue; */
+      /* border-top: 2px solid brown; */
+      /* margin-top: -10px; */
+      z-index: 1;
+    }
+    .uiv1 {
+      margin: -50px;
+      /* position: absolute;
+      right: 0px;
+      width: 300px; */
+    }
+
+    .uiv2 {
+    }
+
+    .secure {
+      padding-bottom: 10px;
+    }
+
+    .secureH1 {
+      font-weight: 700;
+    }
+
+    .topBottomMargin {
+      margin-top: 70px;
+      margin-bottom: 70px;
+    }
+
+    .topBottomPadding {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+
+    .topBottomPaddingSmall {
+      padding-bottom: 20px;
+    }
+
+    .seriousBox {
+      background-color: white;
+      color: black;
+    }
+
+    /* Accordion */
+    :root {
+      --contentHeight: 30vh;
+      --sectionWidth: 700px;
+    }
+
+    section {
+      max-width: var(--sectionWidth);
+      margin: 40px auto;
+      width: 97%;
+      color: #fff;
+    }
+
+    .pointy {
+      cursor: pointer;
+    }
+
+    summary {
+      display: block;
+      cursor: pointer;
+      padding: 10px;
+      font-size: 22px;
+      transition: 0.3s;
+      border-bottom: 2px solid;
+      user-select: none;
+    }
+
+    details > div {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: auto;
+      height: 100%;
+      user-select: none;
+      padding: 0 20px;
+      line-height: 1.5;
+    }
+
+    details > div > img {
+      align-self: flex-start;
+      max-width: 100%;
+      margin-top: 20px;
+    }
+
+    details > div > p {
+      flex: 1;
+    }
+
+    @media (min-width: 768px) {
+      details[open] > div > p {
+        opacity: 0;
+        animation-name: showContent;
+        animation-duration: 0.6s;
+        animation-delay: 0.2s;
+        animation-fill-mode: forwards;
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      details[open] > div {
+        animation-name: slideDown;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+      }
+
+      details[open] > div > img {
+        opacity: 0;
+        height: 100%;
+        margin: 0;
+        animation-name: showImage;
+        animation-duration: 0.3s;
+        animation-delay: 0.15s;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        height: 0;
+        padding: 0;
+      }
+
+      to {
+        opacity: 1;
+        height: var(--contentHeight);
+        padding: 20px;
+      }
+    }
+
+    @keyframes showImage {
+      from {
+        opacity: 0;
+        clip-path: inset(50% 0 50% 0);
+        transform: scale(0.4);
+      }
+
+      to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+      }
+    }
+
+    @keyframes showContent {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* form */
+    input {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .mainButton {
+      padding: 10px;
+    }
+
+    .topPadding {
+      margin-top: 60px !important;
+    }
+
+    #topBar a {
+      color: white;
+    }
+
+    .pronungroup {
+      display: block;
+    }
+    .pronunlink {
+      background: #fcf6f6;
+      font-family: var(--e-global-typography-primary-font-family), Sans-serif;
+      padding: 7px 12px;
+      font-size: 1.3em;
+      border: 1px solid #e8e3e3;
+      border-radius: 6px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #333 !important;
+      cursor: pointer;
+    }
+
+    .pronunlink:hover {
+      background: #fff9d6;
+    }
+
+    .playing {
+      background: #ffbd00 !important;
+    }
+
+    ul.wordlist {
+      list-style: none;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.wordlist li {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 10px;
+      margin: 3px;
+      display: inline-table;
+      text-align: center;
+      font-size: 21px;
+    }
+
+    li {
+      vertical-align: baseline;
+    }
+
+    .wordlist li a {
+      background: #fcf6f6;
+      font-family: var(--e-global-typography-primary-font-family), Sans-serif;
+      padding: 7px 12px;
+      font-size: 1.3em;
+      border: 1px solid #e8e3e3;
+      border-radius: 6px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #333 !important;
+      cursor: pointer;
+    }
+    .pronunsound {
+      padding-top: 10px;
+    }
+    .wordgroup {
+      flex-direction: row;
+    }
+
+    .bold {
+      font-weight: 800;
+    }
+
+    div {
+      -webkit-user-select: none; /* Safari */
+      -ms-user-select: none; /* IE 10 and IE 11 */
+      user-select: none; /* Standard syntax */
+    }
+  </style>
+  <body>
+    <div class="container-fluid whiteContainer">
+      <div class="row">
+        <div class="col" style="text-align: center">
+          <h2>Presiona en cada botón y repite en voz alta:</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" style="text-align: center">
+          <h3>&quot;-ed&quot; como “T”</h3>
+        </div>
+        <ul id="wordlist1" class="wordlist"></ul>
+      </div>
+      <div class="row">
+        <div class="col" style="text-align: center">
+          <h3>&quot;-ed&quot; como “D”</h3>
+        </div>
+        <ul id="wordlist2" class="wordlist"></ul>
+      </div>
+      <div class="row">
+        <div class="col" style="text-align: center">
+          <h3>&quot;-ed&quot; como “ID”</h3>
+        </div>
+        <ul id="wordlist3" class="wordlist"></ul>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let words = {
+        edt: [
+          { word: "asked", pron: "askt" },
+          { word: "cooked", pron: "kukt" },
+          { word: "danced", pron: "danst" },
+          { word: "dressed", pron: "drest" },
+          { word: "dropped", pron: "draapt" },
+          { word: "escaped", pron: "uh·skaypt" },
+          { word: "finished", pron: "fi·nuhsht" },
+          { word: "fixed", pron: "fikst" },
+          { word: "helped", pron: "helpt" },
+          { word: "hoped", pron: "howpt" },
+          { word: "jumped", pron: "juhmpt" },
+          { word: "kissed", pron: "kist" },
+          { word: "knocked", pron: "naakt" },
+          { word: "laughed", pron: "laft" },
+          { word: "looked", pron: "lukt" },
+          { word: "missed", pron: "mist" },
+          { word: "mixed", pron: "mikst" },
+          { word: "packed", pron: "pakt" },
+          { word: "pushed", pron: "pusht" },
+          { word: "relaxed", pron: "ruh·lakst" },
+          { word: "shopped", pron: "shaapt" },
+          { word: "smoked", pron: "smowkt" },
+          { word: "stopped", pron: "staapt" },
+          { word: "talked", pron: "taakt" },
+          { word: "walked", pron: "waakt" },
+          { word: "washed", pron: "waasht" },
+          { word: "watched", pron: "waacht" },
+          { word: "worked", pron: "wurkt" },
+        ],
+        edd: [
+          { word: "agreed", pron: "uh·greed" },
+          { word: "allowed", pron: "uh·lowd" },
+          { word: "answered", pron: "an·srd" },
+          { word: "appeared", pron: "uh·peerd" },
+          { word: "arrived", pron: "uh·rived" },
+          { word: "believed", pron: "buh·leevd" },
+          { word: "called", pron: "kaald" },
+          { word: "carried", pron: "keh·reed" },
+          { word: "cleaned", pron: "kleend" },
+          { word: "closed", pron: "klowzd" },
+          { word: "cried", pron: "kride" },
+          { word: "died", pron: "dide" },
+          { word: "enjoyed", pron: "uhn·joyd" },
+          { word: "explained", pron: "uhk·splaynd" },
+          { word: "followed", pron: "faa·lowd" },
+          { word: "happened", pron: "ha·pnd" },
+          { word: "killed", pron: "kild" },
+          { word: "listened", pron: "li·snd" },
+          { word: "lived", pron: "livd" },
+          { word: "loved", pron: "luhvd" },
+          { word: "opened", pron: "ow·pnd" },
+          { word: "played", pron: "playd" },
+          { word: "rained", pron: "raynd" },
+          { word: "remembered", pron: "ruh·mem·brd" },
+          { word: "shared", pron: "shehrd" },
+          { word: "stayed", pron: "stayd" },
+          { word: "studied", pron: "stuh·deed" },
+          { word: "traveled", pron: "tra·vld" },
+          { word: "tried", pron: "tride" },
+          { word: "used", pron: "just" },
+        ],
+        edid: [
+          { word: "accepted", pron: "uhk·sep·tuhd" },
+          { word: "attended", pron: "uh·ten·duhd" },
+          { word: "contacted", pron: "kaan·tak·tuhd" },
+          { word: "decided", pron: "dee·sai·duhd" },
+          { word: "divided", pron: "duh·vai·duhd" },
+          { word: "ended", pron: "en·duhd" },
+          { word: "expected", pron: "uhk·spek·tuhd" },
+          { word: "graduated", pron: "gra·joo·ay·tuhd" },
+          { word: "hated", pron: "hay·tuhd" },
+          { word: "hunted", pron: "huhn·tuhd" },
+          { word: "included", pron: "uhn·kloo·duhd" },
+          { word: "invented", pron: "uhn·ven·tuhd" },
+          { word: "invited", pron: "uhn·vai·tuhd" },
+          { word: "landed", pron: "lan·duhd" },
+          { word: "needed", pron: "nee·duhd" },
+          { word: "painted", pron: "payn·tuhd" },
+          { word: "planted", pron: "plan·tuhd" },
+          { word: "presented", pron: "pruh·zen·tuhd" },
+          { word: "printed", pron: "prin·tuhd" },
+          { word: "protected", pron: "pruh·tek·tuhd" },
+          { word: "provided", pron: "pruh·vai·duhd" },
+          { word: "rented", pron: "ren·tuhd" },
+          { word: "repeated", pron: "ruh·pee·tuhd" },
+          { word: "rested", pron: "reh·stuhd" },
+          { word: "shouted", pron: "shau·tuhd" },
+          { word: "started", pron: "staar·tuhd" },
+          { word: "treated", pron: "tree·tuhd" },
+          { word: "visited", pron: "vi·zuh·tuhd" },
+          { word: "waited", pron: "way·tuhd" },
+          { word: "wanted", pron: "waan·tuhd" },
+        ],
+      };
+
+      function playSound(word, evt) {
+        console.log("playsound", word, evt);
+        evt.target.classList.add("playing");
+        document.getElementById(evt.target.id + "sound").classList.add("bold");
+
+        document.getElementById(`audio${evt.target.id}`).play();
+        document.getElementById(`audio${evt.target.id}`).onended = () => {
+          evt.target.classList.remove("playing");
+          document
+            .getElementById(evt.target.id + "sound")
+            .classList.remove("bold");
+        };
+      }
+
+      function createButton(el) {
+        var li = document.createElement("li");
+        li.classList.add("wordgroup");
+
+        var audio = document.createElement("audio");
+        audio.src = `./audios/${el.word}.mp3`;
+        audio.id = `audio${el.word}`;
+        audio.preload = "true";
+        li.appendChild(audio);
+
+        var div = document.createElement("div");
+        div.id = el.word;
+        div.classList.add("pronunlink");
+        div.addEventListener("click", playSound.bind(null, el.word));
+        div.innerText = el.word;
+        li.appendChild(div);
+
+        var div = document.createElement("div");
+        div.classList.add("pronunsound");
+        div.id = el.word + "sound";
+        div.innerText = el.pron;
+        li.appendChild(div);
+
+        return li;
+      }
+
+      Object.keys(words).forEach((wl, i) => {
+        var wordlist = document.getElementById("wordlist" + (i + 1));
+        words[wl].map((el) => {
+          wordlist.appendChild(createButton(el));
+        });
+      });
+    </script>
+  </body>
+</html>
