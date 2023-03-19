@@ -546,16 +546,26 @@
 
       function playSound(word, evt) {
         console.log("playsound", word, evt);
+
+        const sound = new Audio(`./audios/${el.word}.mp3`);
+
+        sound.play();
+        // sound.pause();
+        // sound.currentTime = 0;
+
+        // document.body.removeEventListener("click", unlockAudio);
+        // document.body.removeEventListener("touchstart", unlockAudio);
+
         evt.target.classList.add("playing");
         document.getElementById(evt.target.id + "sound").classList.add("bold");
 
-        document.getElementById(`audio${evt.target.id}`).play();
-        document.getElementById(`audio${evt.target.id}`).onended = () => {
-          evt.target.classList.remove("playing");
-          document
-            .getElementById(evt.target.id + "sound")
-            .classList.remove("bold");
-        };
+        // document.getElementById(`audio${evt.target.id}`).play();
+        // document.getElementById(`audio${evt.target.id}`).onended = () => {
+        //   evt.target.classList.remove("playing");
+        //   document
+        //     .getElementById(evt.target.id + "sound")
+        //     .classList.remove("bold");
+        // };
       }
 
       function createButton(el) {
