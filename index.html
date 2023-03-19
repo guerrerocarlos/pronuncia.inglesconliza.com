@@ -547,7 +547,7 @@
       function playSound(word, evt) {
         console.log("playsound", word, evt);
 
-        const sound = new Audio(`./audios/${el.word}.mp3`);
+        const sound = new Audio(`./audios/${evt.target.id}.mp3`);
 
         sound.play();
         // sound.pause();
